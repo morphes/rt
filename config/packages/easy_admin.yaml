@@ -1,0 +1,50 @@
+easy_admin:
+    site_name: 'Stage'
+    entities:
+        Users:
+            label: 'Пользователи'
+            class: App\Entity\Users
+            list:
+                fields: ['id', 'email', 'roles']
+        Events:
+            class: App\Entity\Events
+            label: 'События'
+            list:
+                title: 'События'
+                fields: ['id', 'title']
+            form:
+                fields:
+                  - { property: 'title', label: 'Наименование'}
+                  - { property: 'description', label: 'Описание'}
+                  - { property: 'image', label: 'Изображение'}
+                  - { property: 'duration', label: 'Длительность'}
+        Tickets:
+            class: App\Entity\Tickets
+            label: 'Билеты'
+            list:
+                title: 'Билеты'
+                fields: ['id', 'name', 'time', 'price']
+            form:
+                fields:
+                  - { property: 'name', label: 'Наименование'}
+                  - { property: 'time', label: 'Время'}
+                  - { property: 'price', label: 'Цена'}
+        TicketType:
+            class: App\Entity\TicketType
+            label: 'Типы билетов'
+            list:
+                title: 'Типы билетов'
+                fields: ['id', 'name']
+            form:
+                fields:
+                  - { property: 'name', label: 'Наименование'}
+    design:
+        brand_color: 'black'
+        menu:
+          - Users
+          - Events
+          - Tickets
+          - TicketType
+        assets:
+            css:
+                - '/bundles/lp/css/lp.css'
