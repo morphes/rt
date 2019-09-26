@@ -15,11 +15,9 @@ class AuthMutation implements MutationInterface
     private $request;
 
     public function __construct(
-        Redis $redis,
         ContainerInterface $container,
         AuthenticatorService $authenticatorService
     ) {
-        $this->redis = $redis;
         $this->authenticatorService = $authenticatorService;
         if ($container->has('request_stack')) {
             $this->request = $container->get('request_stack')->getCurrentRequest();
