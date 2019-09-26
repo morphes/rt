@@ -10,9 +10,6 @@ easy_admin:
         brand_color: 'black'
         menu:
           - Users
-          - Events
-          - Tickets
-          - TicketType
         assets:
             css:
                 - '/bundles/lp/css/lp.css'
